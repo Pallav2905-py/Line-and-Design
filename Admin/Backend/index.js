@@ -7,6 +7,7 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary').v2;
 // Initialize Firebase Admin SDK (as before)
 const serviceAccount = require('./serviceAccountKey.json');
+if (!serviceAccount) console.log("Service Account Key Not Found");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -19,10 +20,10 @@ app.use(cors());
 // Configure Cloudinary
 cloudinary.config({
   cloud_name: 'drn1fyyir', // Replace with your Cloudinary cloud name
-  api_key: '895617676152112', // Replace with your Cloudinary API key
-  api_secret: 'fHqAsh6Fx_EaeRovUjGaeyed7rs', // Replace with your Cloudinary API secret
+  api_key: process.env.API_KEY, // Replace with your Cloudinary API key
+  api_secret: process.env.API_SECRET, // Replace with your Cloudinary API secret
 });
-
+1
 // Set up multer for handling image uploads
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -165,19 +166,19 @@ app.post("/quote", async (req, res) => {
   console.log("/Quote is hitting");
   const { name, homeAddress, phone, interiorType, size } = req.body;
   try {
-      const contactRef = db.collection('quote').doc();
-      await contactRef.set({
-          name,
-          homeAddress,
-          phone,
-          interiorType,
-          size,
-          status: "Not Ack",
-          // createdAt: new Date() // Include the default time
-      });
-      res.status(201).send({ message: 'Quote request submitted successfully' });
+    const contactRef = db.collection('quote').doc();
+    await contactRef.set({
+      name,
+      homeAddress,
+      phone,
+      interiorType,
+      size,
+      status: "Not Ack",
+      // createdAt: new Date() // Include the default time
+    });
+    res.status(201).send({ message: 'Quote request submitted successfully' });
   } catch (error) {
-      res.status(500).send(error.message);
+    res.status(500).send(error.message);
   }
 });
 
