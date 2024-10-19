@@ -12,7 +12,8 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -108,7 +109,7 @@
                         <h1 class="flaticon-office font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Our Office</h5>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <p class="m-0">Mahalaxmi Industrial Estate, Chikhali, Pune - 412114 / 9112446933</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +118,7 @@
                         <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Email Us</h5>
-                            <p class="m-0">info@example.com</p>
+                            <p class="m-0">srushti@lineanddesign.in </p>
                         </div>
                     </div>
                 </div>
@@ -126,7 +127,7 @@
                         <h1 class="flaticon-telephone font-weight-normal text-primary m-0 mr-3"></h1>
                         <div class="d-flex flex-column">
                             <h5>Call Us</h5>
-                            <p class="m-0">+012 345 6789</p>
+                            <p class="m-0">7743885553</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +158,7 @@
 
 
     <!-- Blog Start -->
-    <div class="container-fluid bg-light pt-5">
+    <!-- <div class="container-fluid bg-light pt-5">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col text-center mb-4">
@@ -291,8 +292,82 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Blog End -->
+    <div class="container-fluid bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column justify-content-center bg-primary h-100 p-5">
+                        <div class="d-inline-flex border border-secondary p-4 mb-4">
+                            <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Our Office</h4>
+                                <p class="m-0 text-white">Mahalaxmi Industrial Estate, Chikhali, Pune - 412114 /
+                                    9112446933</p>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex border border-secondary p-4 mb-4">
+                            <h1 class="flaticon-email font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Email Us</h4>
+                                <p class="m-0 text-white">srushti@lineanddesign.in</p>
+                            </div>
+                        </div>
+                        <div class="d-inline-flex border border-secondary p-4">
+                            <h1 class="flaticon-telephone font-weight-normal text-secondary m-0 mr-3"></h1>
+                            <div class="d-flex flex-column">
+                                <h4>Call Us</h4>
+                                <p class="m-0 text-white">7743885553</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+                    <div class="contact-form">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate" onsubmit="submitForm(event)">
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="name" placeholder="Name"
+                                    required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="homeAddress"
+                                    placeholder="Your Address (With Location)" required="required"
+                                    data-validation-required-message="Please enter your home address" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="phone" placeholder="Phone Number"
+                                    required="required"
+                                    data-validation-required-message="Please enter your phone number" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="interiorType"
+                                    placeholder="Type of Interior Design (e.g., Kitchen, Entire Home, Wardrobe)"
+                                    required="required"
+                                    data-validation-required-message="Please enter the type of interior design" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="size"
+                                    placeholder="Approximate Size (in sq ft)" required="required"
+                                    data-validation-required-message="Please enter the approximate size" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Request
+                                    Quote</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Footer Start -->
@@ -300,14 +375,19 @@
         <div class="row pt-5">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-primary mb-4">Get In Touch</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Mahalaxmi Industrial Estate, Chikhali, Pune - 412114 /
+                    9112446933</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>7743885553</p>
+                <p><i class="fa fa-envelope mr-2"></i>srushti@lineanddesign.in </p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0"
+                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
@@ -337,7 +417,8 @@
                         <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                        <input type="email" class="form-control border-0" placeholder="Your Email"
+                            required="required" />
                     </div>
                     <div>
                         <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
@@ -347,10 +428,10 @@
         </div>
         <div class="container border-top border-secondary pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved. 
-				
-				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-				Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
+                &copy; <a class="text-white font-weight-bold" href="#">Your Site Name</a>. All Rights Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed by <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
             </p>
         </div>
     </div>
@@ -362,6 +443,74 @@
 
 
     <!-- JavaScript Libraries -->
+    <script>
+        // Debounce function to limit the rate of calls to a function
+        function debounce(func, delay) {
+            let timeout;
+            return function (...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), delay);
+            };
+        }
+
+        async function submitForm(event) {
+            event.preventDefault(); // Prevent default form submission
+            event.stopPropagation(); // Stop the event from bubbling up
+
+            const submitButton = document.getElementById('sendMessageButton');
+            submitButton.disabled = true; // Disable the button to prevent multiple submissions
+
+            // Get values from the form
+            const name = document.getElementById('name').value.trim();
+            const homeAddress = document.getElementById('homeAddress').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const interiorType = document.getElementById('interiorType').value.trim();
+            const size = document.getElementById('size').value.trim();
+
+            // Validate form data
+            if (!name || !homeAddress || !phone || !interiorType || !size) {
+                document.getElementById('success').innerHTML = '<div class="alert alert-danger">Please fill in all fields.</div>';
+                submitButton.disabled = false; // Re-enable button
+                return; // Exit the function early
+            }
+
+            // Prepare the request body
+            const requestBody = {
+                name,
+                homeAddress,
+                phone,
+                interiorType,
+                size,
+            };
+
+            try {
+                const response = await fetch('http://localhost:3001/quote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                document.getElementById('success').innerHTML = '<div class="alert alert-success">Quote request submitted successfully!</div>';
+                document.getElementById('contactForm').reset(); // Reset the form after successful submission
+            } catch (error) {
+                document.getElementById('success').innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
+            } finally {
+                submitButton.disabled = false; // Re-enable the button after the request is complete
+            }
+        }
+
+        // Assign the debounced function to form submission
+        document.getElementById('contactForm').onsubmit = debounce(submitForm, 300);
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
