@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <Router>
+      {!isAuthenticated && < AdminLogin />}
       <div style={styles.container}>
         {isAuthenticated && <Sidebar />} {/* Show Sidebar if authenticated */}
         <div style={styles.content}>

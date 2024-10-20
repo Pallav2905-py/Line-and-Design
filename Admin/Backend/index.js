@@ -5,6 +5,9 @@ const cors = require('cors');
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary').v2;
+const Groq = require("groq-sdk");
+const groq = new Groq({ apiKey: "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" });
+
 // Initialize Firebase Admin SDK (as before)
 const serviceAccount = require('./serviceAccountKey.json');
 if (!serviceAccount) console.log("Service Account Key Not Found");
@@ -35,7 +38,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 // Routes
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
   res.status(200).send("Backend Server is Running");
 })
 // 1. Add a Project (POST)
@@ -221,6 +224,70 @@ app.delete("/quote/:id", async (req, res) => {
     res.status(500).send(error.message);
   }
 });
+
+//? AI Price Estimation
+app.post("/estimate", async (req, res) => {
+  const projectDetails = req.body; // Expecting project details in the request body
+
+  try {
+      const chatCompletion = await getGroqChatCompletion(projectDetails);
+      const responseContent = chatCompletion.choices[0]?.message?.content;
+
+      // Validate JSON response
+      let jsonResponse;
+      try {
+          jsonResponse = JSON.parse(responseContent);
+      } catch (jsonError) {
+          return res.status(500).json({ error: "Invalid JSON response from the model." });
+      }
+
+      res.json(jsonResponse);
+  } catch (error) {
+      console.error("Error fetching chat completion:", error);
+      res.status(500).json({ error: "Failed to fetch cost estimate." });
+  }
+});
+
+async function getGroqChatCompletion({ area, typeOfArea, projectType, materialPreference, projectSize, urgency }) {
+  try {
+      const prompt = createPrompt({ area, typeOfArea, projectType, materialPreference, projectSize, urgency });
+
+      return await groq.chat.completions.create({
+          messages: [
+              {
+                  role: "user",
+                  content: prompt
+              },
+          ],
+          model: "llama3-8b-8192", 
+      });
+  } catch (error) {
+      console.error("Error creating chat completion:", error);
+      throw error;
+  }
+}
+
+// Function to create the prompt based on project details
+function createPrompt({ area, typeOfArea, projectType, materialPreference, projectSize, urgency }) {
+  return `Estimate the cost for a project based on the following details:\n\n` +
+      `- Area: ${area}\n` +
+      `- Type of Area: ${typeOfArea}\n` +
+      `- Project Type: ${projectType}\n` +
+      `- Material Preference: ${materialPreference}\n` +
+      `- Project Size: ${projectSize}\n` +
+      `- Urgency: ${urgency}\n\n` +
+      `Return the result in JSON format only, structured as follows with NO extra explanation:\n` +
+      `{\n` +
+      `  "estimated_cost": <total_cost>,\n` +
+      `  "breakdown": {\n` +
+      `    "labor_cost": <labor_cost>,\n` +
+      `    "material_cost": <material_cost>\n` +
+      `  },\n` +
+      `  "estimated_days_of_completion": <estimated_days>\n` +
+      `}`;
+}
+
+
 
 // Start server
 const PORT = process.env.PORT || 3001;
