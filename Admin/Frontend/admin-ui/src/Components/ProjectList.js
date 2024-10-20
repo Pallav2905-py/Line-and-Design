@@ -19,7 +19,7 @@ const ProjectList = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:3001/projects/${id}`, { status });
+      await axios.put(`https://line-and-design.onrender.com/projects/${id}`, { status });
       fetchProjects();
     } catch (error) {
       console.error('Error updating status:', error);
@@ -28,7 +28,7 @@ const ProjectList = () => {
 
   const deleteProject = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/projects/${id}`);
+      await axios.delete(`https://line-and-design.onrender.com/projects/${id}`);
       fetchProjects();
     } catch (error) {
       console.error('Error deleting project:', error);

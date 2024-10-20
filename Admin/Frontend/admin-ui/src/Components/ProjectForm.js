@@ -35,7 +35,7 @@ const ProjectForm = ({ onProjectAdded }) => {
     }
 
     try {
-      await axios.post('http://localhost:3001/projects', formDataObj, {
+      await axios.post('https://line-and-design.onrender.com/projects', formDataObj, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

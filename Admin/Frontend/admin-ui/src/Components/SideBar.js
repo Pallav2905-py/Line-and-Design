@@ -1,35 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap is imported
 
 const Sidebar = () => {
   return (
-    <div style={styles.sidebar}>
-      <h3>Admin Dashboard</h3>
-      <ul style={styles.menu}>
-        <li><Link to="/manage-projects">Manage Projects</Link></li>
-        <li><Link to="/manage-employees">Manage Employee & Labour</Link></li>
-        <li><Link to="/advertisement">Advertisement</Link></li>
-        <li><Link to="/customer-support">Customer Support</Link></li>
+    <div className="d-flex flex-column vh-100 bg-success text-white p-3">
+      <h3 className="mb-4">Admin Dashboard</h3>
+      <ul className="nav flex-column">
+        <li className="nav-item mb-2">
+          <Link to="/manage-projects" className="nav-link text-white">Manage Projects</Link>
+        </li>
+        <li className="nav-item mb-2">
+          <Link to="/manage-employees" className="nav-link text-white">Manage Employee & Labour</Link>
+        </li>
+        <li className="nav-item mb-2">
+          <Link to="/advertisement" className="nav-link text-white">Advertisement</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/customer-support" className="nav-link text-white">Customer Support</Link>
+        </li>
       </ul>
     </div>
   );
-};
-
-const styles = {
-  sidebar: {
-    width: '200px',
-    height: '100vh',
-    backgroundColor: '#333',
-    color: '#fff',
-    padding: '20px',
-  },
-  menu: {
-    listStyle: 'none',
-    padding: '0',
-  },
-  menuItem: {
-    margin: '10px 0',
-  },
 };
 
 export default Sidebar;

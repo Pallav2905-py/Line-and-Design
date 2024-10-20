@@ -7,7 +7,7 @@ function CustomerSupport() {
     useEffect(() => {
         const fetchEnquiries = async () => {
             try {
-                const response = await fetch('http://localhost:3001/contact');
+                const response = await fetch('https://line-and-design.onrender.com/contact');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -25,7 +25,7 @@ function CustomerSupport() {
         try {
             const enquiry = enquiries.find(enquiry => enquiry.id === id);
             const updatedStatus = enquiry.status === 'Ack' ? 'Not Ack' : 'Ack';
-            const response = await fetch(`http://localhost:3001/contact/${id}`, {
+            const response = await fetch(`https://line-and-design.onrender.com/contact/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function CustomerSupport() {
 
     const deleteEnquiry = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/contact/${id}`, {
+            const response = await fetch(`https://line-and-design.onrender.com/contact/${id}`, {
                 method: 'DELETE',
             });
 
