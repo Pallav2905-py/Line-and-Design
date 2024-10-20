@@ -35,7 +35,9 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage: storage });
 
 // Routes
-
+app.get("/",(req,res)=>{
+  res.status(200).send("Backend Server is Running");
+})
 // 1. Add a Project (POST)
 app.post('/projects', upload.single('image'), async (req, res) => {
   const { projectName, status, startDate, endDate, location, category } = req.body;
