@@ -4,19 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';  // Ensure Bootstrap is imported
 
 const Sidebar = () => {
   return (
-    <div className="d-flex flex-column vh-100 bg-success text-white p-3">
+    <div className="d-flex flex-column vh-100 bg-success text-white p-3" style={{ position: 'fixed', width: '250px', left: '0' }}>
       <h3 className="mb-4">Admin Dashboard</h3>
       <ul className="nav flex-column">
         <li className="nav-item mb-2">
           <Link to="/manage-projects" className="nav-link text-white">Manage Projects</Link>
         </li>
         <li className="nav-item mb-2">
+          <Link to="/quote-request" className="nav-link text-white">Quotes Requests</Link>
+        </li>
+        {/* <li className="nav-item mb-2">
           <Link to="/manage-employees" className="nav-link text-white">Manage Employee & Labour</Link>
-        </li>
-        <li className="nav-item mb-2">
+        </li> */}
+        {/* <li className="nav-item mb-2">
           <Link to="/advertisement" className="nav-link text-white">Advertisement</Link>
-        </li>
-        <li className="nav-item">
+        </li> */}
+        <li className="nav-item mb-2">
           <Link to="/customer-support" className="nav-link text-white">Customer Support</Link>
         </li>
       </ul>

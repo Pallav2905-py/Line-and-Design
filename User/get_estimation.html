@@ -27,6 +27,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -167,8 +170,7 @@
                             <h1 class="flaticon-office font-weight-normal text-secondary m-0 mr-3"></h1>
                             <div class="d-flex flex-column">
                                 <h4>Our Office</h4>
-                                <p class="m-0 text-white">Mahalaxmi Industrial Estate, Chikhali, Pune - 412114 /
-                                    9112446933</p>
+                                <p class="m-0 text-white">Mahalaxmi Industrial Estate, Chikhali, Pune - 412114 / 9112446933</p>
                             </div>
                         </div>
                         <div class="d-inline-flex border border-secondary p-4 mb-4">
@@ -191,49 +193,48 @@
                     <div class="contact-form">
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate" onsubmit="submitForm(event)">
-                            <div class="control-group">
+                            <div class="control-group mb-3">
                                 <input type="text" class="form-control p-4" id="area" placeholder="Area (e.g., Pune)"
                                     required="required" data-validation-required-message="Please enter the area" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
+                            <div class="control-group mb-3">
                                 <select class="form-control p-4" id="typeOfArea" required>
-                                    <option value="">Type of Area</option>
+                                    <option value="" disabled selected hidden>Type of Area</option>
                                     <option value="Urban">Urban</option>
                                     <option value="Semi-Urban">Semi-Urban</option>
                                     <option value="Rural">Rural</option>
                                 </select>
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
+                            <div class="control-group mb-3">
                                 <input type="text" class="form-control p-4" id="projectType"
-                                    placeholder="Type of Interior Design (e.g., Kitchen Interior)" required="required"
-                                    data-validation-required-message="Please enter the type of interior design" />
+                                    placeholder="Type of Interior Design (e.g., Kitchen Interior)"
+                                    required="required" data-validation-required-message="Please enter the type of interior design" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
+                            <div class="control-group mb-3">
                                 <input type="text" class="form-control p-4" id="materialPreference"
                                     placeholder="Material Preference (e.g., High Quality)" required="required"
                                     data-validation-required-message="Please enter the material preference" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
+                            <div class="control-group mb-3">
                                 <input type="text" class="form-control p-4" id="projectSize"
                                     placeholder="Approximate Size (in sq ft)" required="required"
                                     data-validation-required-message="Please enter the approximate size" />
                                 <p class="help-block text-danger"></p>
                             </div>
-                            <div class="control-group">
+                            <div class="control-group mb-4">
                                 <select class="form-control p-4" id="urgency" required>
-                                    <option value="">Urgency</option>
+                                    <option value="" disabled selected hidden>Urgency</option>
                                     <option value="Urgent">Urgent</option>
                                     <option value="Normal">Normal</option>
                                 </select>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Request
-                                    Quote</button>
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Request Quote</button>
                             </div>
                         </form>
                         <div id="result" class="mt-4"></div> <!-- Display result here -->
@@ -242,6 +243,8 @@
             </div>
         </div>
     </div>
+    
+
 
 
 

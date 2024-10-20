@@ -6,9 +6,10 @@ const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary').v2;
 const Groq = require("groq-sdk");
-const groq = new Groq({ apiKey: "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" });
+require('dotenv').config()
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-// Initialize Firebase Admin SDK (as before)
+
 const serviceAccount = require('./serviceAccountKey.json');
 if (!serviceAccount) console.log("Service Account Key Not Found");
 admin.initializeApp({
@@ -20,19 +21,18 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// Configure Cloudinary
 cloudinary.config({
-  cloud_name: 'drn1fyyir', // Replace with your Cloudinary cloud name
-  api_key: process.env.API_KEY, // Replace with your Cloudinary API key
-  api_secret: process.env.API_SECRET, // Replace with your Cloudinary API secret
+  cloud_name: 'drn1fyyir', 
+  api_key: process.env.API_KEY, 
+  api_secret: process.env.API_SECRET,
 });
 1
 // Set up multer for handling image uploads
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: 'projects', // Optional: Folder name in Cloudinary where images will be stored
-    allowed_formats: ['jpg', 'png', 'jpeg'], // Allowed image formats
+    folder: 'projects', 
+    allowed_formats: ['jpg', 'png', 'jpeg'],
   },
 });
 const upload = multer({ storage: storage });

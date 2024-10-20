@@ -6,6 +6,7 @@ import ManageEmployees from './Components/ManageEmployees';
 import Advertisement from './Components/Advertisement';
 import CustomerSupport from './Components/CustomerSupport';
 import AdminLogin from './Components/AdminLogin'; // Import AdminLogin component
+import QuoteRequests from './Components/QuoteRequests';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -28,12 +29,16 @@ const App = () => {
               element={<AdminLogin setIsAuthenticated={setIsAuthenticated} />}
             />
             <Route
+              path="/customer-support"
+              element={isAuthenticated ? <CustomerSupport /> : <Navigate to="/admin-login" />}
+            />
+            <Route
               path="/manage-projects"
               element={isAuthenticated ? <ManageProjects /> : <Navigate to="/admin-login" />}
             />
             <Route
-              path="/manage-employees"
-              element={isAuthenticated ? <ManageEmployees /> : <Navigate to="/admin-login" />}
+              path="/quote-request"
+              element={isAuthenticated ? <QuoteRequests /> : <Navigate to="/admin-login" />}
             />
             <Route
               path="/advertisement"
@@ -43,6 +48,7 @@ const App = () => {
               path="/customer-support"
               element={isAuthenticated ? <CustomerSupport /> : <Navigate to="/admin-login" />}
             />
+            
           </Routes>
         </div>
       </div>
@@ -55,10 +61,11 @@ const styles = {
     display: 'flex',
   },
   content: {
-    marginLeft: '200px',
+    marginLeft: '250px', // Match this with the sidebar's width
     padding: '20px',
     width: '100%',
   },
 };
+
 
 export default App;

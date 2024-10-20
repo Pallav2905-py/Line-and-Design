@@ -3,3 +3,4 @@ Admin/Backend/node_modules/
 Admin/Frontend/admin-ui/node_modules/
  
 Admin/Backend/serviceAccountKey.json
+Admin/Backend/.env
